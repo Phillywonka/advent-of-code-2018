@@ -8,13 +8,8 @@ object Resources {
 
         val filePath = javaClass.classLoader.getResource(fileName).file
 
-//        val fileLines = mutableListOf<String>()
-
         return File(filePath).readLines().toMutableList()
 
-//            useLines { lines -> fileLines.addAll(lines) }
-
-//        return fileLines
     }
 
 }
