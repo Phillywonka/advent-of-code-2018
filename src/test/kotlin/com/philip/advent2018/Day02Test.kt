@@ -13,4 +13,12 @@ class Day02Test {
         assertThat(day02.part1(lines)).isEqualTo(4)
     }
 
+    @Test
+    fun `Part 2 matches input`() {
+        val day02 = Day02()
+        val lines = Resources.getResourceAsList("day02/day_02_part02_test_input.txt")
+        assertThat(day02.part2(lines)).isEqualTo("eghi")
+    }
+
+
 }

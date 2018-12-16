@@ -33,9 +33,45 @@ class Day02 {
 
     }
 
+    fun part2(inputNumbersAsStrings: List<String>): String {
+
+        var charPosition = 0
+        var resultString = ""
+
+        loop1@ for (line in inputNumbersAsStrings) {
+
+            val sameSizeLines = inputNumbersAsStrings.filter { it.length == line.length && it != line }
+
+            loop2@ for (sameSizeLine in sameSizeLines) {
+
+                var count = 0
+
+                for (( index, letter ) in sameSizeLine.withIndex()) {
+
+                    if (line[index] != letter) {
+                        charPosition = index
+                        count++
+
+                        if (count > 1)
+                        {
+                            break
+                        }
+                    }
+
+
+                    if (index == line.length - 1 && count == 1) {
+                        resultString = sameSizeLine.removeRange(charPosition, charPosition + 1)
+                        break@loop1
+                    }
+                }
+            }
+        }
+
+        return resultString
+    }
 }
 
 fun main(args: Array<String>) {
-    print(Day02().part1(Resources.getResourceAsList("day02/part1_input.txt")))
+    print(Day02().part2(Resources.getResourceAsList("day02/part1_input.txt")))
 }
 
