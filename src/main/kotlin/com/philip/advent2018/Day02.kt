@@ -71,7 +71,3 @@ class Day02 {
     }
 }
 
-fun main(args: Array<String>) {
-    print(Day02().part2(Resources.getResourceAsList("day02/part1_input.txt")))
-}
-
